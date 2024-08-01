@@ -5,16 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Book extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'name', 'description'
+        'code', 'title', 'description'
     ];
 
-    public function books()
+    public function categories()
     {
-        return $this->belongsToMany(Book::class, BookCategory::class, 'category_id', 'book_id');
+        return $this->belongsToMany(Category::class, BookCategory::class, 'book_id', 'category_id');
     }
+
 }
