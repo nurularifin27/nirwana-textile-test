@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Book\BookController;
 use App\Http\Controllers\Category\CategoryController;
+use App\Http\Controllers\Rent\RentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -25,4 +26,5 @@ Route::prefix('auth')->group(function () {
 Route::middleware('jwt')->prefix('v1')->group(function () {
     Route::apiResource('/category',CategoryController::class);
     Route::apiResource('/book',BookController::class);
+    Route::apiResource('/rent',RentController::class);
 });
