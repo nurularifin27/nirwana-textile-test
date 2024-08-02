@@ -18,4 +18,9 @@ class Book extends Model
         return $this->belongsToMany(Category::class, BookCategory::class, 'book_id', 'category_id');
     }
 
+    public function rents()
+    {
+        return $this->hasMany(Rent::class);
+    }
+
 }
